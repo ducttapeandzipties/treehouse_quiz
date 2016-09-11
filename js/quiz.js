@@ -4,7 +4,8 @@ var htmlTrue = '<h3>You got these correct:</h3><ol type="I">';
 var htmlFalse = '<h3>You got these wrong:<h3><ol type="I">';
 
 function print(message) {
-  document.write(message);
+  var outputDiv = document.getElementById('output');
+  outputDiv.innerHTML = message;
 }
 var quizData = [                                          // array for qestions, answers and guesses.
   ["How many hours in a day?", 24],
@@ -24,12 +25,12 @@ while (counter < quizData.length ){
 
     }
 
-  counter += 1;                                           //increment score
+  counter += 1;                                           //increment loop
 }
 
 htmlTrue += "</ol>";                                      //close ordered lists
 htmlFalse += "</ol>";
 
-print("You got " + score + " correct.");                  //output
-print(htmlTrue);
-print(htmlFalse);
+print("You got " + score + " correct.<br>" + htmlTrue + htmlFalse);                  //output
+// print(htmlTrue);
+// print(htmlFalse);
